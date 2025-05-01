@@ -17,7 +17,7 @@ async fn propogated_from_jds_to_tp() {
         "1".to_string(),
         tp_addr,
         false,
-        Some(ignore_submit_solution.into()),
+        Some(vec![ignore_submit_solution.into()]),
     );
     let (_jdc, jdc_addr) = start_jdc(&[(pool_addr, jdc_jds_sniffer_addr)], jdc_tp_sniffer_addr);
     let (_translator, tproxy_addr) = start_sv2_translator(jdc_addr);

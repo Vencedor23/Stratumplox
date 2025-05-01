@@ -15,7 +15,7 @@ async fn propogated_from_jdc_to_tp() {
         "0".to_string(),
         jds_addr,
         false,
-        Some(ignore_push_solution.into()),
+        Some(vec![ignore_push_solution.into()]),
     );
     let (jdc_tp_sniffer, jdc_tp_sniffer_addr) =
         start_sniffer("1".to_string(), tp_addr, false, None);
