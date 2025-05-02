@@ -22,7 +22,7 @@ async fn test_jdc_pool_fallback_after_submit_rejection() {
         "0".to_string(),
         pool_addr_1,
         false,
-        Some(
+        Some(vec![
             // Should trigger Fallback process in JDC
             ReplaceMessage::new(
                 MessageDirection::ToDownstream,
@@ -34,7 +34,7 @@ async fn test_jdc_pool_fallback_after_submit_rejection() {
                 })),
             )
             .into(),
-        ),
+        ]),
     );
     let (_pool_2, pool_addr_2) = start_pool(Some(tp_addr)).await;
     // Sniffer between JDC and second pool

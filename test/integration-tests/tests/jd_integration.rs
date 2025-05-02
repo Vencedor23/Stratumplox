@@ -89,7 +89,7 @@ async fn jdc_does_not_stackoverflow_when_no_token() {
         "JDS-JDC-sniffer".to_string(),
         jds_addr,
         false,
-        Some(block_from_message.into()),
+        Some(vec![block_from_message.into()]),
     );
     let (_jdc, jdc_addr) = start_jdc(&[(pool_addr, jds_jdc_sniffer_addr)], tp_addr);
     let _ = start_sv2_translator(jdc_addr);
@@ -160,7 +160,7 @@ async fn jds_receive_solution_while_processing_declared_job_test() {
         "A".to_string(),
         jds_addr,
         false,
-        Some(submit_solution_replace.into()),
+        Some(vec![submit_solution_replace.into()]),
     );
     let (_jdc, jdc_addr) = start_jdc(&[(pool_addr, sniffer_a_addr)], tp_addr_2);
     start_sv2_translator(jdc_addr);
@@ -242,7 +242,7 @@ async fn jds_wont_exit_upon_receiving_unexpected_txids_in_provide_missing_transa
         "A".to_string(),
         jds_addr,
         false,
-        Some(provide_missing_transaction_success_replace.into()),
+        Some(vec![provide_missing_transaction_success_replace.into()]),
     );
 
     let (_, jdc_addr_1) = start_jdc(&[(pool_addr, sniffer_addr)], tp_addr_2);
