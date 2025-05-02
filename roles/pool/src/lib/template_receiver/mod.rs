@@ -1,5 +1,5 @@
 //! ## Template Receiver Module
-//! [`TemplateRx`] manages the connection to the template provider server.
+//! [`TemplateRx`] manages the connection to the Template Provider.
 //!
 //! It is responsible for:
 //! - Receiving and forwarding messages like `NewTemplate` and `SetNewPrevHash` to other subsystems.
@@ -35,7 +35,7 @@ use setup_connection::SetupConnectionHandler;
 
 /// Manages communication with the template provider and relays relevant messages downstream.
 ///
-/// This struct maintains connection channels to the template provider and handles:
+/// This struct maintains connection channels to the Template Provider and handles:
 /// - Receiving and forwarding template-related messages to downstream.
 /// - Intercepting and forwarding solution submission messages from downstream.
 /// - Ensuring proper message flow between components.
@@ -61,7 +61,7 @@ impl TemplateRx {
     /// it performs the SV2 handshake using the `SetupConnectionHandler`. It then sends the
     /// `CoinbaseOutputConstraints` message to inform the template provider about the pool's
     /// constraints. Finally, it spawns two asynchronous tasks: one to handle incoming messages
-    /// from the template provider (`start`) and another to handle outgoing solution submissions
+    /// from the Template Provider (`start`) and another to handle outgoing solution submissions
     /// from downstream (`on_new_solution`).
     #[allow(clippy::too_many_arguments)]
     pub async fn connect(
@@ -133,7 +133,7 @@ impl TemplateRx {
         Ok(())
     }
 
-    /// Listens for messages from the template provider and relays them downstream.
+    /// Listens for messages from the Template Provider and relays them downstream.
     ///
     /// This task runs in a loop, receiving messages from the template provider,
     /// parsing them as Template Distribution messages, and forwarding relevant messages

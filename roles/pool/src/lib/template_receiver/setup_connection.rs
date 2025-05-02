@@ -1,4 +1,4 @@
-//! Handles the setup connection handshake with the template provider.
+//! Handles the setup connection handshake with the Template Provider.
 //!
 //! [`SetupConnectionHandler`] builds and sends a `SetupConnection` message,
 //! processes the response, and implements `ParseCommonMessagesFromUpstream` for
@@ -18,7 +18,7 @@ use roles_logic_sv2::{
 use std::{convert::TryInto, net::SocketAddr, sync::Arc};
 use tracing::{error, info};
 
-/// Handles the connection setup process with the template provider.
+/// Handles the connection setup process with the Template Provider.
 pub struct SetupConnectionHandler {}
 
 impl SetupConnectionHandler {
@@ -44,7 +44,7 @@ impl SetupConnectionHandler {
         })
     }
 
-    /// Establishes a connection with the template provider by sending a `SetupConnection` message
+    /// Establishes a connection with the Template Provider by sending a `SetupConnection` message
     /// and validating the response.
     pub async fn setup(
         receiver: &mut Receiver<EitherFrame>,

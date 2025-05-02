@@ -3,7 +3,7 @@
 //!
 //! [`SetupConnectionHandler`] builds and receives a `SetupConnection` message,
 //! processes the response, and implements `ParseCommonMessagesFromDownstream` for
-//! handling common upstream messages.
+//! handling common downstream messages.
 use super::super::{
     error::{PoolError, PoolResult},
     mining_pool::{EitherFrame, StdFrame},

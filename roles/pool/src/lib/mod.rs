@@ -4,7 +4,7 @@
 //! Responsibilities:
 //! - Spawns the Template Receiver client.
 //! - Starts the Pool server for downstream miners.
-//! - Monitors pool status and handles shutdowns.
+//! - Monitors Pool status and handles shutdowns.
 pub mod config;
 pub mod error;
 pub mod mining_pool;

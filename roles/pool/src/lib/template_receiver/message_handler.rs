@@ -1,6 +1,6 @@
 //! Implements `ParseTemplateDistributionMessagesFromServer` for [`TemplateRx`].
 //!
-//! Handles incoming template distribution messages from the server and forwards them
+//! Handles incoming template distribution messages from the Template Provider and forwards them
 //! as needed.
 use super::TemplateRx;
 use roles_logic_sv2::{

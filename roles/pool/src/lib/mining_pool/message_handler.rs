@@ -225,7 +225,7 @@ impl ParseMiningMessagesFromDownstream<()> for Downstream {
     // Handles a `SubmitSharesExtended` message from the downstream miner.
     //
     // Similar logic to `handle_submit_shares_standard`, but for extended shares.
-    // Validates the share, checks against targets, sends solutions upstream if applicable,
+    // Validates the share, checks against targets, sends solutions to Template Provider if applicable,
     // and responds with `SubmitSharesSuccess` or `SubmitSharesError`.
     //
     // Returns
